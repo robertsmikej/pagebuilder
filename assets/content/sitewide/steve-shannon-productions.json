@@ -1,0 +1,26 @@
+{
+  "name": "Steve Shannon Productions",
+  "address_line_1": "Boise, ID 83702",
+  "address_line_2": "",
+  "phone": "208-555-5555",
+  "email": "steve@steveshannonproductions.com",
+  "site_color": [
+    {
+      "name": "Yellow",
+      "color": "#FDDD3E"
+    },
+    {
+      "name": "Light Orange",
+      "color": "#F8A716"
+    },
+    {
+      "name": "Dark Orange",
+      "color": "#E38E16"
+    }
+  ],
+  "footer": {
+    "show_site_links": true,
+    "show_social": true,
+    "copyright": "(c) 2020 Steve Shannon Productions"
+  }
+}
