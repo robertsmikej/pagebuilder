@@ -17,6 +17,22 @@
           "link": "/contact",
           "header_2": "And Here Too!"
         }
+      ],
+      "theme": "Style 1",
+      "slides": [
+        {
+          "header_1": "Header Text Here",
+          "button_text": "Hear My Demos",
+          "link": "/demos",
+          "desktop": "/img/background1.jpeg"
+        },
+        {
+          "header_1": "Header Text Here 2",
+          "button_text": "Contact Me",
+          "link": "/contact",
+          "header_2": "And Here Too!",
+          "desktop": "/img/background2.jpg"
+        }
       ]
     }
   ]
