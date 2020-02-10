@@ -1,6 +1,7 @@
 {
   "title": "Main Nav",
   "status": true,
+  "which_style": "Style 1",
   "nav_items": [
     {
       "title": "Home",
