@@ -4,6 +4,7 @@
   "address_line_2": "",
   "phone": "208-555-5555",
   "email": "steve@steveshannonproductions.com",
+  "theme": "Style 1",
   "site_color": [
     {
       "name": "Yellow",
@@ -20,7 +21,6 @@
   ],
   "footer": {
     "show_site_links": true,
-    "show_social": true,
-    "copyright": "Steve Shannon Productions"
+    "show_social": true
   }
 }
