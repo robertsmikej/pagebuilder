@@ -1,0 +1,30 @@
+{
+  "title": "Main Nav",
+  "status": true,
+  "nav_items": [
+    {
+      "title": "Home",
+      "status": true,
+      "para": "",
+      "link": "/"
+    },
+    {
+      "title": "Demos",
+      "status": true,
+      "para": "Hear Some Of My Demos",
+      "link": "/demos"
+    },
+    {
+      "title": "Testimonials",
+      "status": true,
+      "para": "See What People Think Of Me",
+      "link": "/testimonials"
+    },
+    {
+      "title": "Contact",
+      "status": true,
+      "para": "Contact Me",
+      "link": "/contact"
+    }
+  ]
+}
