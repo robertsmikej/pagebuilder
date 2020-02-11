@@ -2,6 +2,11 @@
   "name": "home",
   "widgets": [
     {
+      "type": "creeperBar",
+      "text": "Save 20% Now!",
+      "link": "/sale"
+    },
+    {
       "type": "carousel",
       "slide": [
         {
