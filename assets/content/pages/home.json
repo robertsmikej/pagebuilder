@@ -4,6 +4,7 @@
     {
       "type": "creeperbar",
       "theme": "Style 1",
+      "special": false,
       "text": "Save Up To 20% Now!",
       "link": "/sales"
     },
@@ -45,7 +46,8 @@
     },
     {
       "type": "divider",
-      "theme": "Style 1"
+      "theme": "Style 1",
+      "special": false
     }
   ]
 }
