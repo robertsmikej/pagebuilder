@@ -33,7 +33,8 @@
           "header_2": "And Here Too!",
           "desktop": "/img/background1.jpeg"
         }
-      ]
+      ],
+      "hero": true
     }
   ]
 }
