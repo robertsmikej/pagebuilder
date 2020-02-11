@@ -4,7 +4,8 @@
     {
       "type": "creeperBar",
       "text": "Save 20% Now!",
-      "link": "/sale"
+      "link": "/sale",
+      "theme": "Style 1"
     },
     {
       "type": "carousel",
