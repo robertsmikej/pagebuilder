@@ -36,6 +36,10 @@
       ],
       "hero": true,
       "special": true
+    },
+    {
+      "type": "divider",
+      "divider": "divider"
     }
   ]
 }
