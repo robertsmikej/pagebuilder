@@ -2,12 +2,6 @@
   "name": "home",
   "widgets": [
     {
-      "type": "creeperbar",
-      "theme": "Style 1",
-      "text": "Save Up To 20% Now!",
-      "link": "/sales"
-    },
-    {
       "type": "carousel",
       "slide": [
         {
@@ -42,6 +36,12 @@
       ],
       "hero": true,
       "special": true
+    },
+    {
+      "type": "creeperbar",
+      "theme": "Style 1",
+      "text": "Save Up To 20% Now!",
+      "link": "/sales"
     },
     {
       "type": "divider",
