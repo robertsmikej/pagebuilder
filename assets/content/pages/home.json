@@ -2,10 +2,10 @@
   "name": "home",
   "widgets": [
     {
-      "type": "creeperBar",
-      "text": "Save 20% Now!",
-      "link": "/sale",
-      "theme": "Style 1"
+      "type": "creeperbar",
+      "theme": "Style 1",
+      "text": "Save Up To 20% Now!",
+      "link": "/sales"
     },
     {
       "type": "carousel",
