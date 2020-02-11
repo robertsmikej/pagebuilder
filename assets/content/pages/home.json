@@ -45,7 +45,7 @@
     },
     {
       "type": "divider",
-      "divider": "divider"
+      "theme": "Style 1"
     }
   ]
 }
