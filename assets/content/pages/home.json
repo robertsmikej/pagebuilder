@@ -34,7 +34,8 @@
           "desktop": "/img/background1.jpeg"
         }
       ],
-      "hero": true
+      "hero": true,
+      "special": true
     }
   ]
 }
