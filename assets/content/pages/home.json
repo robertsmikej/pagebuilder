@@ -33,6 +33,14 @@
       "type": "divider",
       "theme": "Style 1",
       "special": false
+    },
+    {
+      "type": "button",
+      "theme": "Style 1",
+      "size": "Regular",
+      "special": false,
+      "text": "Click Here!",
+      "link": "/sales"
     }
   ]
 }
