@@ -6,17 +6,152 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
+  - name: 'sitewide'
+    label: 'Sitewide'
+    description: "Sitewide Details"
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/sitewide'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Company Name', name: 'name', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image', required: false }
+      - { label: 'Address Line 1', name: 'address_line_1', widget: 'string', required: false }
+      - { label: 'Address Line 2', name: 'address_line_2', widget: 'string', required: false }
+      - { label: 'Address Line 3', name: 'address_line_3', widget: 'string', required: false }
+      - { label: 'Contact Phone Number', name: 'phone', widget: 'string', required: false }
+      - { label: 'Contact Email Address', name: 'email', widget: 'string', required: false }
+      - label: "Theme"
+        name: "theme"
+        hint: "Which Theme Should We Use For This Section? (See Documentation)"
+        widget: "select"
+        options: ["Style 1", "Style 2", "Style 3"]
+        default: "Style 1"
+      - label: "Site Colors"
+        name: "site_color"
+        widget: "list"
+        fields:
+        - {label: "Common Name", name: "name", widget: "string", required: false}
+        - {label: "Color Code", name: "color", widget: "string", required: false}
+      - label: "Footer Details"
+        name: "footer"
+        widget: "object"
+        fields:
+        - { label: 'Footer - Show Site Links', name: 'show_site_links', widget: 'boolean', required: false }
+        - { label: 'Footer - Show Social Media', name: 'show_social', widget: 'boolean', required: false }
+        - { label: 'Footer Company Description', name: 'para', widget: 'text', required: false }
+      - label: "Social Media"
+        name: "social_media"
+        widget: "object"
+        fields:
+        - label: "Social Media"
+          name: "social_media"
+          widget: "list"
+          fields:
+          - label: "Which Social Network"
+            name: "which"
+            widget: "select"
+            options: ["Facebook", "Instagram", "Twitter"]
+          - { label: 'Show Social Icon', name: 'show_social', widget: 'boolean', required: false }
+          - {label: "Username", name: "username", widget: "string", required: false}
+
+  - name: 'nav'
+    label: 'Navigation'
     identifier_field: title
     format: 'json'
-    folder: 'assets/content/blog'
+    folder: 'assets/content/nav'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     editor:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Nav Shown", name: "status", widget: "boolean", default: true, required: false }
+      - label: "Nav Items"
+        name: "nav_items"
+        widget: "list"
+        fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: "Shown", name: "status", widget: "boolean", default: true, required: false }
+        - { label: 'Short Description', name: 'para', widget: 'string', required: false }
+        - { label: 'Link', name: 'link', widget: 'string', required: false }
+        - { label: 'Icon', name: 'icon', widget: 'image', required: false }
+
+  - name: 'pages'
+    label: 'Pages'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/pages'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Page Name', name: 'name', widget: 'string' }
+      - label: "Page Widget"
+        name: "widgets"
+        widget: "list"
+        types:
+          - label: "Carousel"
+            name: "carousel"
+            widget: object
+            fields:
+              - label: "Theme"
+                name: "theme"
+                hint: "Which Theme Should We Use For This? (See Documentation)"
+                widget: "select"
+                options: ["Style 1", "Style 2", "Style 3"]
+                default: "Style 1"
+              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this carousel the main header for the page?", default: true }
+              - label: "Slide"
+                name: "slides"
+                widget: "list"
+                fields:
+                  - { label: 'Header - Line 1', name: 'header_1', widget: 'string', required: false, default: "Header Text Here"}
+                  - { label: 'Header - Line 2', name: 'header_2', widget: 'string', required: false }
+                  - { label: 'Header - Line 3', name: 'header_3', widget: 'string', required: false }
+                  - { label: 'Para', name: 'para', widget: 'text', required: false }
+                  - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+                  - { label: 'Button Link', name: 'link', widget: 'string', required: false }
+                  - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
+                  - { label: 'Image - Mobile', name: 'mobile', widget: 'image', required: false }
+          - label: "Divider"
+            name: "divider"
+            widget: object
+            fields:
+              - {label: "Theme", name: "theme", widget: "hidden", default: "Style 1"}
+              - {label: "Special", name: "special", widget: "hidden", default: false}
+          - label: "Creeper Bar"
+            name: "creeperbar"
+            widget: object
+            fields:
+              - label: "Theme"
+                name: "theme"
+                hint: "Which Theme Should We Use For This? (See Documentation)"
+                widget: "select"
+                options: ["Style 1", "Style 2", "Style 3"]
+                default: "Style 1"
+              - { label: 'Text', name: 'text', widget: 'string', required: false }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - { label: "Special", name: "special", widget: "hidden", default: false }
+          - label: "Button"
+            name: "button"
+            widget: object
+            fields:
+              - label: "Theme"
+                name: "theme"
+                hint: "Which Theme Should We Use For This? (See Documentation)"
+                widget: "select"
+                options: ["Style 1", "Style 2", "Style 3"]
+                default: "Style 1"
+              - label: "Size"
+                name: "size"
+                widget: "select"
+                options: ["Small", "Regular", "Large"]
+                default: "Regular"
+              - { label: 'Text', name: 'text', widget: 'string', required: false }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - { label: "Special", name: "special", widget: "hidden", default: false }

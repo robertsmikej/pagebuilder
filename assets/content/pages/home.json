@@ -10,21 +10,6 @@
     },
     {
       "type": "carousel",
-      "slide": [
-        {
-          "header_1": "Header Text Here",
-          "button_text": "Hear My Demos",
-          "link": "/demos",
-          "image": "/img/background1.jpeg"
-        },
-        {
-          "header_1": "Header Text Here 2",
-          "image": "/img/background2.jpg",
-          "button_text": "Contact Us",
-          "link": "/contact",
-          "header_2": "And Here Too!"
-        }
-      ],
       "theme": "Style 1",
       "slides": [
         {
