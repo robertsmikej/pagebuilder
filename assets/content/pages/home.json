@@ -35,7 +35,7 @@
       "special": false
     },
     {
-      "type": "button",
+      "type": "sitebutton",
       "theme": "Style 1",
       "size": "Regular",
       "special": false,
