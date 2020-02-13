@@ -52,7 +52,8 @@
     {
       "type": "spacer",
       "theme": "Medium",
-      "special": false
+      "special": false,
+      "margin": false
     },
     {
       "type": "sitebutton",
