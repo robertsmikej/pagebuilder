@@ -37,8 +37,7 @@
     {
       "type": "spacer",
       "theme": "Medium",
-      "special": false,
-      "margin": false
+      "special": false
     },
     {
       "type": "sitebutton",
