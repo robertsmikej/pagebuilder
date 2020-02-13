@@ -50,6 +50,11 @@
       "special": false
     },
     {
+      "type": "spacer",
+      "theme": "Medium",
+      "special": false
+    },
+    {
       "type": "sitebutton",
       "theme": "Style 1",
       "size": "Regular",
