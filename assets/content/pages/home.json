@@ -32,13 +32,13 @@
     {
       "type": "divider",
       "theme": "Style 1",
-      "special": false
+      "special": false,
+      "styles": {
+        "margin": "Medium"
+      }
     },
     {
       "type": "spacer",
-      "theme": "Medium",
-      "special": false,
-      "css": "height",
       "styles": {
         "height": "Medium"
       }
