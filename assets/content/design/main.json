@@ -5,6 +5,14 @@
       "type": "sitecolors",
       "colors": [
         {
+          "name": "Main Text Color",
+          "color": "#232323"
+        },
+        {
+          "name": "Light Text Color",
+          "color": "#FFF"
+        },
+        {
           "name": "Yellow",
           "color": "#FDDD3E"
         },
