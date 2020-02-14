@@ -33,7 +33,10 @@
         }
       ],
       "hero": true,
-      "special": true
+      "special": true,
+      "styles": {
+        "alignment": "Center"
+      }
     },
     {
       "type": "divider",
