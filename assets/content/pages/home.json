@@ -38,7 +38,10 @@
       "type": "spacer",
       "theme": "Medium",
       "special": false,
-      "css": "height"
+      "css": "height",
+      "styles": {
+        "height": "Medium"
+      }
     },
     {
       "type": "sitebutton",
