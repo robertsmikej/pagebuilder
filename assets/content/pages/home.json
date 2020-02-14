@@ -53,7 +53,7 @@
       "type": "spacer",
       "theme": "Medium",
       "special": false,
-      "css": "margin"
+      "css": "height"
     },
     {
       "type": "sitebutton",
