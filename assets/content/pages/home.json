@@ -16,14 +16,20 @@
           "header_1": "Header Text Here",
           "button_text": "Hear My Demos",
           "link": "/demos",
-          "desktop": "/img/background3.jpg"
+          "desktop": "/img/background3.jpg",
+          "styles": {
+            "alignment": "Center"
+          }
         },
         {
           "header_1": "Header Text Here 2",
           "button_text": "Contact Me",
           "link": "/contact",
           "header_2": "And Here Too!",
-          "desktop": "/img/background1.jpeg"
+          "desktop": "/img/background1.jpeg",
+          "styles": {
+            "alignment": "Left"
+          }
         }
       ],
       "hero": true,
