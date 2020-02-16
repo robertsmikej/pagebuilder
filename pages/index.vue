@@ -1,15 +1,7 @@
 <template>
-    <v-layout
-    column
-    justify-center
-    align-center
-    >
-        <v-flex
-            xs12
-            sm8
-            md6
-        >
-            <component :is="component.componentName" v-for="(component, index) in pagewidgets" :key="index" :slides="component.slides ? component.slides : null" :data="component.data ? component.data : component" :theme="component.themedata ? component.themedata : null"></component>
+    <v-layout column justify-center align-center>
+        <v-flex xs12 sm8 md6>
+            <component :is="component.componentName" v-for="(component, index) in pagewidgets" :key="index" :slides="component.slides ? component.slides : null" :datas="component" :theme="component.themedata ? component.themedata : null" :cssStyles="component.css ? component.css : null"></component>
         </v-flex>
     </v-layout>
 </template>
@@ -29,6 +21,7 @@ export default {
             let pagewidgets = this.$store.state.pages[this.page].widgets;
             for (let w in pagewidgets) {
                 let widget = pagewidgets[w];
+                console.log(widget);
                 if (widget.componentName) {
                     this.componentName = widget.componentName;
                     this.dynamic = () => import(`@/components/${this.componentName}.vue`);
@@ -39,9 +32,6 @@ export default {
         pageInfo: function () {
             return this.$store.state.pages.home
         }
-    },
-    methods: {
-
     },
     head() {
         return {

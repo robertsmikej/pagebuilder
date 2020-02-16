@@ -1,60 +1,3 @@
-const theme = {
-    1 : {
-        wrapper: {
-            nav: {
-                drawer: {
-                    fixed: true,
-                    right: false,
-                    "mini-variant": false,
-                    clipped: false,
-                    height: "50px"
-                },
-                bar :{
-                    clipped: false,
-                    fixed: true,
-                    "collapse-on-scroll": false
-                }    
-            },
-            footer: {
-                "dark": true,
-                "fixed": false
-            }
-        },
-        creeperbar: {
-            basic: {
-                "dark": true,
-                "light": false,
-                "fixed": false,
-                "lights-out": false,
-                "window": true
-            }
-        },
-        carousel: {
-            special: {
-                "continuous": false,
-                "cycle": true,
-                "dark": false,
-                "height": 400,
-                "hide-delimiters": false,
-                "interval": 6000,
-                "show-arrows": false,
-                "show-arrows-on-hover": true,
-                "hide-delimiter-background": true
-            },
-            basic: {
-                "continuous": false,
-                "cycle": true,
-                "dark": false,
-                "height": 400,
-                "hide-delimiters": false,
-                "interval": 6000,
-                "show-arrows": false,
-                "show-arrows-on-hover": true,
-            }
-        }
-    }
-};
-
 export const state = () => ({
     sitewide: {},
     pages: {},
@@ -73,19 +16,10 @@ function sortItems(data) {
     }
     return newdata;
 }
-function stripTheme(data) {
-    return data ? parseInt(data.toLowerCase().replace("style ", "")) : data;
-}
 
 export const mutations = {
     setSitewide(state, data) {
         state.sitewide = data;
-        let wrapperThemeNum = stripTheme(data.theme);
-        state.sitewide.theme = {
-            num: {
-                wrapper: wrapperThemeNum
-            }
-        };
     },
     setNav(state, data) {
         var checkLive = sortItems(data);
@@ -95,25 +29,36 @@ export const mutations = {
     setPages(state, data) {
         for (var p in data) {
             let page = data[p];
+            
             let name = page.name;
             state.pages[name] = page;
             state.pages[name].pagewidgets = {};
             for (let w in page.widgets) {
                 let widget = page.widgets[w];
                 let type = widget.type;
-                let widgetThemeNum = stripTheme(widget.theme);
-                let widgetTheme = theme[widgetThemeNum][type];
-                if (widgetTheme) {
-                    if (widget.special) {
-                        widget.theme = theme[widgetThemeNum][type].special;
-                    } else {
-                        widget.theme = theme[widgetThemeNum][type].basic;
-                    }
-                } else {
-                    widget.theme = {
-                        basic: {}
+                let classArr = [];
+                let subClasses = [];
+                classArr.push(type);
+                if (widget.styles) {
+                    for (let s in widget.styles) {
+                        let style = s;
+                        let choosen = widget.styles[s].toLowerCase();
+                        classArr.push(type + "--" + style + "--" + choosen);
                     }
                 }
+                if (widget.substyles) {
+                    for (let s in widget.substyles) {
+                        let styleblock = s;
+                        for (let st in widget.substyles[s].styles) {
+                            let style = st;
+                            let choosen = widget.substyles[s].styles[st].toLowerCase();
+                            subClasses.push(type + "--" + style + "--" + choosen);
+                        }
+                    }
+                }
+                widget.subClasses = subClasses;
+                widget.classes = classArr;
+                //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME
                 let componentName = widget.type.split(" ");
                 for (let i = 0; i < componentName.length; i++) {
                     componentName[i] = componentName[i][0].toUpperCase() + componentName[i].slice(1);
@@ -122,12 +67,6 @@ export const mutations = {
                 widget.componentName = componentName[0];
             }
         }
-        // console.log(state.pages);
-    },
-    setTheme(state) {
-        let wrapperThemeNum = state.sitewide.theme.num.wrapper;
-        state.theme.wrapper = theme[wrapperThemeNum].wrapper;
-        state.theme.themes = theme;
     }
 };
 
@@ -163,9 +102,5 @@ export const actions = {
             return res;
         });
         await commit('setPages', d);
-
-        
-        await commit('setTheme');
-
     }
 };

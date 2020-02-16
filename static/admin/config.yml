@@ -106,7 +106,7 @@ collections:
                 options: ["Style 1", "Style 2", "Style 3"]
                 default: "Style 1"
               - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this carousel the main header for the page?", default: true }
-              - label: "Slide"
+              - label: "Slides"
                 name: "slides"
                 widget: "list"
                 fields:
@@ -118,12 +118,16 @@ collections:
                   - { label: 'Button Link', name: 'link', widget: 'string', required: false }
                   - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
                   - { label: 'Image - Mobile', name: 'mobile', widget: 'image', required: false }
-          - label: "Divider"
-            name: "divider"
-            widget: object
-            fields:
-              - {label: "Theme", name: "theme", widget: "hidden", default: "Style 1"}
-              - {label: "Special", name: "special", widget: "hidden", default: false}
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Alignment"
+                    name: "alignment"
+                    hint: "Where Should We Align The Text In The Slide(s)?"
+                    widget: "select"
+                    options: ["Left", "Center", "Right"]
+                    default: "Left"
           - label: "Creeper Bar"
             name: "creeperbar"
             widget: object
@@ -136,9 +140,16 @@ collections:
                 default: "Style 1"
               - { label: 'Text', name: 'text', widget: 'string', required: false }
               - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - label: "Text Color"
+                name: "color"
+                widget: "relation"
+                collection: "themes"
+                searchFields: ["segment.sitecolors.colors"]
+                valueField: "segment.sitecolors.colors.name"
+                displayFields: ["segment.sitecolors"]
               - { label: "Special", name: "special", widget: "hidden", default: false }
           - label: "Button"
-            name: "button"
+            name: "sitebutton"
             widget: object
             fields:
               - label: "Theme"
@@ -155,3 +166,53 @@ collections:
               - { label: 'Text', name: 'text', widget: 'string', required: false }
               - { label: 'Link', name: 'link', widget: 'string', required: false }
               - { label: "Special", name: "special", widget: "hidden", default: false }
+          - label: "Divider"
+            name: "divider"
+            widget: object
+            fields:
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Spacing"
+                    name: "margin"
+                    hint: "How big should the space Above and Below be?"
+                    widget: "select"
+                    options: ["Extra Small", "Small", "Medium", "Large", "Extra Large"]
+                    default: "Medium"
+          - label: "Spacer"
+            name: "spacer"
+            widget: object
+            fields:
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Spacing"
+                    name: "height"
+                    hint: "How big should the spacer be?"
+                    widget: "select"
+                    options: ["Extra Small", "Small", "Medium", "Large", "Extra Large"]
+                    default: "Medium"
+
+  - name: 'themes'
+    label: 'Site Themes'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/themes'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Name', name: 'name', hint: "Theme Name", widget: 'string' }
+      - label: "Site Colors"
+        name: "sitecolors"
+        widget: "object"
+        fields:
+          - label: "Color"
+            name: "colors"
+            widget: "list"
+            fields:
+              - {label: "Common Name", name: "name", widget: "string", required: false}
+              - {label: "Color Code", name: "color", widget: "string", required: false}

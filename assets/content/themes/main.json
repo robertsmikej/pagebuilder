@@ -2,7 +2,26 @@
   "name": "Main",
   "sitecolors": {
     "colors": [
-      {}
+      {
+        "name": "Main Text Color",
+        "color": "#232323"
+      },
+      {
+        "name": "Light Text Color",
+        "color": "#FFF"
+      },
+      {
+        "name": "Yellow",
+        "color": "#FDDD3E"
+      },
+      {
+        "name": "Light Orange",
+        "color": "#F8A716"
+      },
+      {
+        "name": "Dark Orange",
+        "color": "#E38E16"
+      }
     ]
   }
 }

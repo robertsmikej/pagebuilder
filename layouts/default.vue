@@ -1,7 +1,7 @@
 <template>
     <v-app>
         
-        <v-navigation-drawer v-model="drawer" app v-bind="wrapper.nav.drawer">
+        <v-navigation-drawer v-model="drawer" app v-bind="vtheme.wrapper.nav.drawer">
             <v-list>
                 <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link">
                     <v-list-item-action>
@@ -13,7 +13,7 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-app-bar app v-bind="wrapper.nav.bar">
+        <v-app-bar app v-bind="vtheme.wrapper.nav.bar">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
             <v-toolbar-title>
                 {{ sitewide.name }}
@@ -24,7 +24,7 @@
             <nuxt/>
             </v-container>
         </v-content>
-        <v-footer app v-bind="wrapper.footer">
+        <v-footer app v-bind="vtheme.wrapper.footer">
             <span>&copy; {{ new Date().getFullYear() }} - {{ sitewide.name }}</span>
         </v-footer>
     </v-app>
@@ -45,7 +45,28 @@ export default {
     },
     data () {
         return {
-            drawer: false
+            drawer: false,
+            vtheme: {
+                wrapper: {
+                    nav: {
+                        drawer: {
+                            fixed: true,
+                            right: false,
+                            "mini-variant": false,
+                            clipped: false
+                        },
+                        bar: {
+                            clipped: false,
+                            fixed: true,
+                            "collapse-on-scroll": false
+                        }    
+                    },
+                    footer: {
+                        "dark": true,
+                        "fixed": false
+                    }
+                }
+            }
         }
     }
 }

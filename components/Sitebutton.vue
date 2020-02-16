@@ -1,7 +1,7 @@
 <template>  
-    <v-system-bar :class="datas.classes" v-bind="setTheme">
+    <v-btn :class="datas.classes" v-bind="setTheme">
         {{datas.text}}
-    </v-system-bar>
+    </v-btn>
 </template>
 
 <script>
@@ -11,14 +11,12 @@ export default {
     },
     data() {
         return {
-            elementName: "creeperbar__component",
             vtheme: {
                 "1" : {
-                    "dark": true,
-                    "light": false,
-                    "fixed": false,
-                    "lights-out": false,
-                    "window": true
+                    "bottom": true,
+                    "dark": false,
+                    "depressed": false,
+                    "small": true
                 }
                 
             }
@@ -36,5 +34,8 @@ export default {
 </script>
 
 <style>
+.sitebutton {
+    margin: 10px 0;
+}
+</style>
 
-</style> 

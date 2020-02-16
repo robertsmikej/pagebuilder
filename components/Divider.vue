@@ -1,18 +1,29 @@
 <template>
-    <v-divider v-bind="theme"/>
+    <v-divider :class="datas.classes"/>
 </template>
 
 <script>
 export default {
     props: {
-        data: Object,
-        theme: Object
+        datas: Object
     }
 }
 </script>
 
 <style>
-.v-divider {
-    margin: 10px 0
+.divider--margin--extra-small {
+    margin: 8px 0;
+}
+.divider--margin--small {
+    margin: 14px 0;
+}
+.divider--margin--medium {
+    margin: 22px 0;
+}
+.divider--margin--large {
+    margin: 30px 0;
+}
+.divider--margin--extra-large {
+    margin: 38px 0;
 }
 </style> 
