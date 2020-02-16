@@ -14,7 +14,7 @@ export default {
             elementName: "creeperbar__component",
             vtheme: {
                 "1" : {
-                    "dark": true,
+                    "dark": false,
                     "light": false,
                     "fixed": false,
                     "lights-out": false,

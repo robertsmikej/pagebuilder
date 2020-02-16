@@ -2,7 +2,7 @@ export const state = () => ({
     sitewide: {},
     pages: {},
     nav: [],
-    theme: {}
+    themes: {}
 });
 
 function sortItems(data) {
@@ -67,6 +67,9 @@ export const mutations = {
                 widget.componentName = componentName[0];
             }
         }
+    },
+    setThemes(state, data) {
+        state.themes = data;
     }
 };
 
@@ -74,7 +77,7 @@ export const getters = {
     sitewide: state => state.sitewide,
     nav: state => state.nav,
     pages: state => state.pages,
-    theme: state => state.theme
+    themes: state => state.themes
 };
 
 export const actions = {
@@ -102,5 +105,13 @@ export const actions = {
             return res;
         });
         await commit('setPages', d);
+
+        var themes = await require.context('~/assets/content/themes/', false, /\.json$/);
+        var d = datas.keys().map(key => {
+            let res = datas(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setThemes', d);
     }
 };

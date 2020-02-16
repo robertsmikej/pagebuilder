@@ -8,6 +8,18 @@
     {
       "name": "Main Light Text",
       "code": "#FFFFFF"
+    },
+    {
+      "name": "Yellow",
+      "color": "#FDDD3E"
+    },
+    {
+      "name": "Light Orange",
+      "color": "#F8A716"
+    },
+    {
+      "name": "Dark Orange",
+      "color": "#E38E16"
     }
   ]
 }
