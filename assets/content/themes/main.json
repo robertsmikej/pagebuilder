@@ -1,25 +1,8 @@
 {
   "name": "Main",
-  "colors": [
+  "segment": [
     {
-      "namer": "Main Text Dark",
-      "code": "#232323"
-    },
-    {
-      "namer": "Main Text Light",
-      "code": "#FFFFFF"
-    },
-    {
-      "namer": "Yellow",
-      "code": "#FDDD3E"
-    },
-    {
-      "namer": "Light Orange",
-      "code": "#F8A716"
-    },
-    {
-      "namer": "Dark Orange",
-      "code": "#E38E16"
+      "type": "sitecolors"
     }
   ]
 }
