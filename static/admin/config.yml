@@ -144,8 +144,9 @@ collections:
                 name: "color"
                 widget: "relation"
                 collection: "themes"
-                searchFields: ["sitecolors"]
-                valueField: "sitecolors"
+                searchFields: ["segment.sitecolors.colors"]
+                valueField: "segment.sitecolors.colors.name"
+                displayFields: ["segment.sitecolors"]
               - { label: "Special", name: "special", widget: "hidden", default: false }
           - label: "Button"
             name: "sitebutton"
@@ -205,9 +206,17 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', hint: "Theme Name", widget: 'string' }
-      - label: "Site Colors"
-        name: "colors"
+      - label: "Theme Segment"
+        name: "segment"
         widget: "list"
-        fields:
-          - { label: "Common Name", name: "name", widget: "string", required: false }
-          - { label: "Color Code", name: "code", widget: "string", required: false }
+        types:
+        - label: "Site Colors"
+          name: "sitecolors"
+          widget: "object"
+          fields:
+            - label: "Color"
+              name: "colors"
+              widget: "list"
+              fields:
+                - {label: "Common Name", name: "name", widget: "string", required: false}
+                - {label: "Color Code", name: "color", widget: "string", required: false}
