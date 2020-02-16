@@ -2,24 +2,24 @@
   "name": "Main",
   "colors": [
     {
-      "name": "Main Dark Text",
+      "namer": "Main Text Dark",
       "code": "#232323"
     },
     {
-      "name": "Main Light Text",
+      "namer": "Main Text Light",
       "code": "#FFFFFF"
     },
     {
-      "name": "Yellow",
-      "color": "#FDDD3E"
+      "namer": "Yellow",
+      "code": "#FDDD3E"
     },
     {
-      "name": "Light Orange",
-      "color": "#F8A716"
+      "namer": "Light Orange",
+      "code": "#F8A716"
     },
     {
-      "name": "Dark Orange",
-      "color": "#E38E16"
+      "namer": "Dark Orange",
+      "code": "#E38E16"
     }
   ]
 }
