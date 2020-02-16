@@ -1,0 +1,11 @@
+{
+  "name": "Main",
+  "segment": [
+    {
+      "type": "sitecolors",
+      "colors": [
+        {}
+      ]
+    }
+  ]
+}
