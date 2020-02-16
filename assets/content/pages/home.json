@@ -3,7 +3,7 @@
   "widgets": [
     {
       "type": "creeperbar",
-      "theme": "Style 1",
+      "theme": "Light",
       "special": false,
       "text": "Save Up To 20% Now!",
       "link": "/sales"
