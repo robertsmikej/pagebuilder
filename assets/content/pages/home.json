@@ -2,14 +2,6 @@
   "name": "home",
   "widgets": [
     {
-      "type": "creeperbar",
-      "theme": "Light",
-      "special": false,
-      "text": "Save Up To 20% Now!",
-      "link": "/sales",
-      "alignment": "Center"
-    },
-    {
       "type": "carousel",
       "theme": "Style 1",
       "slides": [
@@ -38,6 +30,14 @@
       "styles": {
         "alignment": "Center"
       }
+    },
+    {
+      "type": "creeperbar",
+      "theme": "Light",
+      "special": false,
+      "text": "Save Up To 20% Now!",
+      "link": "/sales",
+      "alignment": "Center"
     },
     {
       "type": "divider",
