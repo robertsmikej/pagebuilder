@@ -2,7 +2,12 @@
   "name": "Main",
   "segment": [
     {
-      "type": "sitecolors"
+      "type": "sitecolors",
+      "colors": [
+        {
+          "name": "Site"
+        }
+      ]
     }
   ]
 }
