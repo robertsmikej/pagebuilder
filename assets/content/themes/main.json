@@ -1,6 +1,13 @@
 {
   "name": "Main",
   "colors": [
-    {}
+    {
+      "name": "Main Dark Text",
+      "code": "#232323"
+    },
+    {
+      "name": "Main Light Text",
+      "code": "#FFFFFF"
+    }
   ]
 }
