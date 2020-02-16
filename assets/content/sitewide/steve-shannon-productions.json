@@ -1,24 +1,16 @@
 {
-  "name": "Steve Shannon Productions",
-  "address_line_1": "Boise, ID 83702",
+  "name": "Park City Penguin Hunters",
+  "address_line_1": "Park City, UT",
   "address_line_2": "",
   "phone": "208-555-5555",
-  "email": "steve@steveshannonproductions.com",
-  "theme": "Style 1",
-  "site_color": [
-    {
-      "name": "Yellow",
-      "color": "#FDDD3E"
-    },
-    {
-      "name": "Light Orange",
-      "color": "#F8A716"
-    },
-    {
-      "name": "Dark Orange",
-      "color": "#E38E16"
-    }
-  ],
+  "email": "hunter@parkcitypenguins.com",
+  "creeperbar": {
+    "show_sitewide_creeper": true,
+    "text": "20% Off Your Next Hunt!",
+    "link": "/hunter",
+    "theme": "Light",
+    "alignment": "Center"
+  },
   "footer": {
     "show_site_links": true,
     "show_social": true
