@@ -6,7 +6,8 @@
       "theme": "Light",
       "special": false,
       "text": "Save Up To 20% Now!",
-      "link": "/sales"
+      "link": "/sales",
+      "alignment": "Center"
     },
     {
       "type": "carousel",
