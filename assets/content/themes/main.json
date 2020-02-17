@@ -10,6 +10,11 @@
       "type": "creeperbar",
       "backgroundColor": "#FFFFFF",
       "color": "#232323"
+    },
+    {
+      "type": "herobanner",
+      "backgroundColor": "#FFFFFF",
+      "color": "#232323"
     }
   ]
 }
