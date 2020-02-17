@@ -68,7 +68,14 @@
         {
           "header": "Header Text Here",
           "sub_header": "Sub Header Text Here",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "icon": "/img/google-optimize.png"
+        },
+        {
+          "header": "Header Text Here Too",
+          "sub_header": "Sub Header Text Here Too",
+          "content": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n* sed do eiusmod tempor incididunt ut labore et.",
+          "icon": "/img/vue-logo.png"
         }
       ]
     }
