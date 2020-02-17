@@ -58,6 +58,19 @@
       "special": false,
       "text": "Click Here!",
       "link": "/sales"
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "height": "Medium"
+      },
+      "list": [
+        {
+          "header": "Header Text Here",
+          "sub_header": "Sub Header Text Here",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
     }
   ]
 }
