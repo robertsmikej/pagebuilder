@@ -2,16 +2,18 @@
   "name": "home",
   "widgets": [
     {
-      "type": "heroBanner",
-      "header_1": "Header Text Here",
-      "styles": {
-        "height": "Medium"
-      },
       "header_2": "Sub Header Text Here",
       "para": "If there is anything to put in paragraph form, it'll go here.",
+      "styles": {
+        "height": "Medium",
+        "alignment": "Center"
+      },
+      "special": true,
       "button_text": "Click Here!",
+      "type": "heroBanner",
       "link": "/sales",
-      "desktop": "/img/background2.jpg"
+      "desktop": "/img/background2.jpg",
+      "header_1": "Header Text Here"
     },
     {
       "type": "carousel",
