@@ -2,6 +2,18 @@
   "name": "home",
   "widgets": [
     {
+      "type": "heroBanner",
+      "header_1": "Header Text Here",
+      "styles": {
+        "height": "Medium"
+      },
+      "header_2": "Sub Header Text Here",
+      "para": "If there is anything to put in paragraph form, it'll go here.",
+      "button_text": "Click Here!",
+      "link": "/sales",
+      "desktop": "/img/background2.jpg"
+    },
+    {
       "type": "carousel",
       "theme": "Light",
       "slides": [
