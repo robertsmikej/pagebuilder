@@ -13,6 +13,11 @@
           "styles": {
             "alignment": "Center"
           }
+        },
+        {
+          "header_1": "Header Text Here Too!",
+          "desktop": "/img/background2.jpg",
+          "link": "/sales"
         }
       ],
       "hero": true,
