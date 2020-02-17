@@ -13,6 +13,9 @@ export default {
         dynamic: null,
         componentName: null
     }),
+    props: {
+        mainPadding: Object
+    },
     computed: {
         sitewide: function () {
             return this.$store.state.sitewide
@@ -21,7 +24,6 @@ export default {
             let pagewidgets = this.$store.state.pages[this.page].widgets;
             for (let w in pagewidgets) {
                 let widget = pagewidgets[w];
-                console.log(widget);
                 if (widget.componentName) {
                     this.componentName = widget.componentName;
                     this.dynamic = () => import(`@/components/${this.componentName}.vue`);
@@ -31,6 +33,11 @@ export default {
         },
         pageInfo: function () {
             return this.$store.state.pages.home
+        }
+    },
+    methods: {
+        creeperMain: function (creeper) {
+            
         }
     },
     head() {

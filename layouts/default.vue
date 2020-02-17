@@ -1,6 +1,5 @@
 <template>
     <v-app>
-        
         <v-navigation-drawer v-model="drawer" app v-bind="vtheme.wrapper.nav.drawer">
             <v-list>
                 <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link">
@@ -13,15 +12,16 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-app-bar app v-bind="vtheme.wrapper.nav.bar">
+        <v-app-bar app v-bind="vtheme.wrapper.nav.bar" ref="navbar">
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
             <v-toolbar-title>
                 {{ sitewide.name }}
             </v-toolbar-title>
         </v-app-bar>
-        <v-content>
+        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperFixed(), creeperThemed()" class="sitewide__creeper"/>
+        <v-content :style="{'paddingTop': mainPadding()}">
             <v-container>
-            <nuxt/>
+            <nuxt />
             </v-container>
         </v-content>
         <v-footer app v-bind="vtheme.wrapper.footer">
@@ -31,7 +31,12 @@
 </template>
 
 <script>
+import Creeperbar from '~/components/Creeperbar.vue';
+
 export default {
+    components: {
+        Creeperbar
+    },
     computed: {
         wrapper: function () {
             return this.$store.state.theme.wrapper;
@@ -41,6 +46,46 @@ export default {
         },
         nav: function () {
             return this.$store.state.nav
+        },
+        themes: function () {
+            return this.$store.state.themes
+        }  
+    },
+    methods: {
+        creeperFixed: function () {
+            let barFixed = {
+                width: "100%",
+                position: "fixed",
+                top: 0
+            };
+            if (this.$refs.navbar) {
+                barFixed.top = this.$refs.navbar.styles.height;
+            }
+            return barFixed;
+        },
+        creeperThemed: function () {
+            let themes = this.$store.state.themes;
+            let sitewide = this.$store.state.sitewide;
+            let defaultTheme = sitewide.theme.toLowerCase();
+
+            let creeperTheme = themes[defaultTheme].segments["creeperbar"];
+            delete creeperTheme.type;
+            console.log(themes);
+            console.log(sitewide);
+            console.log(creeperTheme);
+            return creeperTheme;
+        },
+        mainPadding: function () {
+            let paddingTop = 0;
+            if (this.$refs.navbar) {
+                paddingTop = this.$refs.navbar.styles.height;
+            }
+            if (this.$refs.creeper) {
+                let height = parseInt(this.$refs.creeper.$el.style.height.replace("px", "")) + parseInt(paddingTop);
+                
+                paddingTop = height;
+            }
+            return paddingTop + "px";
         }
     },
     data () {
@@ -57,7 +102,9 @@ export default {
                         },
                         bar: {
                             clipped: false,
-                            fixed: true,
+                            fixed: false,
+                            dark: false,
+                            short: false,
                             "collapse-on-scroll": false
                         }    
                     },
@@ -236,5 +283,10 @@ a {
         font-size: 1.4em;
         margin: 4px 0;
     }
+}
+
+.sitewide__creeper {
+    text-align: center;
+    justify-content: center;
 }
 </style>

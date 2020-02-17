@@ -106,12 +106,3 @@ export default {
     text-align: right;
 }
 </style> 
-
-        // :continuous="theme['continuous'] ? true : false"
-        // :cycle="theme['cycle'] ? true : false"
-        // :dark="theme['dark'] ? true : false"
-        // :height="theme['height']"
-        // :hide-delimiters="theme['hide-delimiters'] ? true : false"
-        // :interval="theme['interval']"
-        // :show-arrows="theme['show-arrows'] ? true : false"
-        // :show-arrows-on-hover="theme['show-arrows-on-hover'] ? true : false"

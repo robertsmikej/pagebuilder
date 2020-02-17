@@ -26,16 +26,26 @@ collections:
       - { label: 'Contact Email Address', name: 'email', widget: 'string', required: false }
       - label: "Theme"
         name: "theme"
-        hint: "Which Theme Should We Use For This Section? (See Documentation)"
-        widget: "select"
-        options: ["Style 1", "Style 2", "Style 3"]
-        default: "Style 1"
-      - label: "Site Colors"
-        name: "site_color"
-        widget: "list"
+        hint: "Which Theme Should Be Default For The Site? (See Documentation)"
+        widget: "relation"
+        collection: "themes"
+        searchFields: ["name"]
+        valueField: "name"
+        displayFields: ["name"]
+        default: "light"
+      - label: "Creeper Bar"
+        name: "creeperbar"
+        widget: object
         fields:
-        - {label: "Common Name", name: "name", widget: "string", required: false}
-        - {label: "Color Code", name: "color", widget: "string", required: false}
+          - { label: 'Show Sitewide Creeper Bar', name: 'show_sitewide_creeper', widget: 'boolean', default: false, required: false }
+          - { label: 'Text', name: 'text', widget: 'string', required: false }
+          - { label: 'Link', name: 'link', widget: 'string', required: false }
+          - label: "Alignment"
+            name: "alignment"
+            hint: "Where Should We Align The Text?"
+            widget: "select"
+            options: ["Left", "Center", "Right"]
+            default: "Center"
       - label: "Footer Details"
         name: "footer"
         widget: "object"
@@ -102,9 +112,12 @@ collections:
               - label: "Theme"
                 name: "theme"
                 hint: "Which Theme Should We Use For This? (See Documentation)"
-                widget: "select"
-                options: ["Style 1", "Style 2", "Style 3"]
-                default: "Style 1"
+                widget: "relation"
+                collection: "themes"
+                searchFields: ["name"]
+                valueField: "name"
+                displayFields: ["name"]
+                default: "Light Theme"
               - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this carousel the main header for the page?", default: true }
               - label: "Slides"
                 name: "slides"
@@ -132,22 +145,23 @@ collections:
             name: "creeperbar"
             widget: object
             fields:
+              - { label: 'Text', name: 'text', widget: 'string', required: false }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
               - label: "Theme"
                 name: "theme"
                 hint: "Which Theme Should We Use For This? (See Documentation)"
-                widget: "select"
-                options: ["Style 1", "Style 2", "Style 3"]
-                default: "Style 1"
-              - { label: 'Text', name: 'text', widget: 'string', required: false }
-              - { label: 'Link', name: 'link', widget: 'string', required: false }
-              - label: "Text Color"
-                name: "color"
                 widget: "relation"
                 collection: "themes"
-                searchFields: ["segment.sitecolors.colors"]
-                valueField: "segment.sitecolors.colors.name"
-                displayFields: ["segment.sitecolors"]
-              - { label: "Special", name: "special", widget: "hidden", default: false }
+                searchFields: ["name"]
+                valueField: "name"
+                displayFields: ["name"]
+                default: "Light Theme"
+              - label: "Alignment"
+                name: "alignment"
+                hint: "Where Should We Align The Text?"
+                widget: "select"
+                options: ["Left", "Center", "Right"]
+                default: "Center"
           - label: "Button"
             name: "sitebutton"
             widget: object
@@ -155,9 +169,12 @@ collections:
               - label: "Theme"
                 name: "theme"
                 hint: "Which Theme Should We Use For This? (See Documentation)"
-                widget: "select"
-                options: ["Style 1", "Style 2", "Style 3"]
-                default: "Style 1"
+                widget: "relation"
+                collection: "themes"
+                searchFields: ["name"]
+                valueField: "name"
+                displayFields: ["name"]
+                default: "Light Theme"
               - label: "Size"
                 name: "size"
                 widget: "select"
@@ -206,17 +223,20 @@ collections:
       preview: false
     fields:
       - { label: 'Name', name: 'name', hint: "Theme Name", widget: 'string' }
-      - label: "Theme Segment"
+      - label: "Widget Themes"
         name: "segment"
         widget: "list"
         types:
-        - label: "Site Colors"
-          name: "sitecolors"
+        - label: "Default Options"
+          name: "default"
           widget: "object"
           fields:
-            - label: "Color"
-              name: "colors"
-              widget: "list"
-              fields:
-                - {label: "Common Name", name: "name", widget: "string", required: false}
-                - {label: "Color Code", name: "color", widget: "string", required: false}
+            - {label: "Default Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", default:"#FFF", required: false}
+            - {label: "Default Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", default:"#232323", required: false}
+        - label: "Creeper Bar Options"
+          name: "creeperbar"
+          widget: "object"
+          fields:
+            - {label: "Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
+            - {label: "Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
+  

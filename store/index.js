@@ -1,8 +1,8 @@
 export const state = () => ({
     sitewide: {},
-    pages: {},
     nav: [],
-    themes: {}
+    themes: {},
+    pages: {}
 });
 
 function sortItems(data) {
@@ -26,7 +26,26 @@ export const mutations = {
         var populate = checkLive[0].nav_items;
         state.nav = populate;
     },
+    setThemes(state, data) {
+        let themes = {};
+        for (let t in data) {
+            let segments = {};
+            let theme = data[t];
+            let name = theme.name.toLowerCase();
+            theme.name = name;
+            themes[name] = theme;
+            for (let s in theme.segment) {
+                let segment = theme.segment[s];
+                segments[segment.type.toLowerCase()] = segment;
+            }
+            delete theme.segment;
+            theme.segments = segments;
+        }
+        state.themes = themes;
+    },
     setPages(state, data) {
+        let themes = state.themes;
+        let sitewide = state.sitewide;
         for (var p in data) {
             let page = data[p];
             
@@ -36,6 +55,24 @@ export const mutations = {
             for (let w in page.widgets) {
                 let widget = page.widgets[w];
                 let type = widget.type;
+                
+                //BELOW SETS WIDGET THEME DATA
+                if (widget.theme) {
+                    widget.theme = widget.theme.toLowerCase();
+                    let theme = widget.theme;
+                    if (themes[theme]) {
+                        if (themes[theme].segments[widget.type]) {
+                            widget.themedata = themes[theme].segments[widget.type];
+                        } else {
+                            widget.themedata = themes[theme].segments["default"];
+                        }
+                    }
+                } else {
+                    widget.theme = sitewide.theme.toLowerCase();
+                    widget.themedata = themes[widget.theme].segments["default"];
+                }
+
+                //BELOW SETS CLASS NAMES FOR WIDGETS, ETC.
                 let classArr = [];
                 let subClasses = [];
                 classArr.push(type);
@@ -58,6 +95,9 @@ export const mutations = {
                 }
                 widget.subClasses = subClasses;
                 widget.classes = classArr;
+
+
+
                 //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME
                 let componentName = widget.type.split(" ");
                 for (let i = 0; i < componentName.length; i++) {
@@ -67,17 +107,14 @@ export const mutations = {
                 widget.componentName = componentName[0];
             }
         }
-    },
-    setThemes(state, data) {
-        state.themes = data;
     }
 };
 
 export const getters = {
     sitewide: state => state.sitewide,
     nav: state => state.nav,
-    pages: state => state.pages,
-    themes: state => state.themes
+    themes: state => state.themes,
+    pages: state => state.pages
 };
 
 export const actions = {
@@ -98,6 +135,14 @@ export const actions = {
         });
         await commit('setNav', d);
 
+        var datas = await require.context('~/assets/content/themes/', false, /\.json$/);
+        var d = datas.keys().map(key => {
+            let res = datas(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setThemes', d);
+
         var datas = await require.context('~/assets/content/pages/', false, /\.json$/);
         var d = datas.keys().map(key => {
             let res = datas(key);
@@ -105,13 +150,5 @@ export const actions = {
             return res;
         });
         await commit('setPages', d);
-
-        var themes = await require.context('~/assets/content/themes/', false, /\.json$/);
-        var d = datas.keys().map(key => {
-            let res = datas(key);
-            res.slug = key.slice(2, -5);
-            return res;
-        });
-        await commit('setThemes', d);
     }
 };

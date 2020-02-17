@@ -36,5 +36,7 @@ export default {
 </script>
 
 <style>
-
+.sitewide__creeper .v-system-bar {
+    display: fixed;
+}
 </style> 
