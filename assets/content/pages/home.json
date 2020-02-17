@@ -3,7 +3,7 @@
   "widgets": [
     {
       "type": "carousel",
-      "theme": "Style 1",
+      "theme": "Light",
       "slides": [
         {
           "header_1": "Header Text Here",
@@ -41,8 +41,6 @@
     },
     {
       "type": "divider",
-      "theme": "Style 1",
-      "special": false,
       "styles": {
         "margin": "Medium"
       }
@@ -55,7 +53,7 @@
     },
     {
       "type": "sitebutton",
-      "theme": "Style 1",
+      "theme": "Light",
       "size": "Regular",
       "special": false,
       "text": "Click Here!",
