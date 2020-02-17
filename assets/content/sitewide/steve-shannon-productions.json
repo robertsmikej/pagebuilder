@@ -8,9 +8,9 @@
     "show_sitewide_creeper": true,
     "text": "20% Off Your Next Hunt!",
     "link": "/hunter",
-    "theme": "Light",
     "alignment": "Center"
   },
+  "theme": "Light",
   "footer": {
     "show_site_links": true,
     "show_social": true
