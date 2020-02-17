@@ -1,0 +1,20 @@
+{
+  "name": "Dark",
+  "segment": [
+    {
+      "type": "default",
+      "backgroundColor": "#232323",
+      "color": "#FFFFFF"
+    },
+    {
+      "type": "creeperbar",
+      "backgroundColor": "#232323",
+      "color": "#FFFFFF"
+    },
+    {
+      "type": "herobanner",
+      "backgroundColor": "#232323",
+      "color": "#FFFFFF"
+    }
+  ]
+}
