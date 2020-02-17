@@ -2,6 +2,11 @@
   "name": "Light",
   "segment": [
     {
+      "type": "default",
+      "background_color": "#FFFFFF",
+      "text_color": "#232323"
+    },
+    {
       "type": "creeperbar",
       "background_color": "#FFF",
       "text_color": "#232323"
