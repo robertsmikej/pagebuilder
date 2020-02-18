@@ -12,9 +12,9 @@
       "color": "#FFFFFF"
     },
     {
-      "type": "herobanner",
-      "backgroundColor": "#232323",
-      "color": "#FFFFFF"
+      "type": "heroBanner",
+      "color": "#232323",
+      "backgroundColor": "#FFFFFF"
     }
   ]
 }
