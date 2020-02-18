@@ -5,9 +5,6 @@
       "header_2": "",
       "para": "",
       "styles": {
-        "height": "Medium",
-        "alignment": "Center",
-        "color": "Light",
         "color_header": "Light Text Color",
         "class_alignment": "Center"
       },
@@ -21,14 +18,12 @@
     {
       "type": "spacer",
       "styles": {
-        "height": "Medium",
         "class_height": "Medium"
       }
     },
     {
       "type": "divider",
       "styles": {
-        "margin": "Medium",
         "class_margin": "Medium"
       }
     },
@@ -43,7 +38,6 @@
     {
       "type": "cards",
       "styles": {
-        "height": "Medium",
         "class_alignment": "Center"
       },
       "list": [

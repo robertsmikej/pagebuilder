@@ -38,11 +38,15 @@ export default {
   buildModules: [
     '@nuxtjs/vuetify',
   ],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-  ],
+    /*
+    ** Nuxt.js modules
+    */
+    modules: [
+        '@nuxtjs/markdownit'
+    ],
+    markdownit: {
+        injected: true,
+    },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module

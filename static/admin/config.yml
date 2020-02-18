@@ -128,7 +128,7 @@ collections:
                   - { label: 'Header - Line 3', name: 'header_3', widget: 'string', required: false }
                   - { label: 'Para', name: 'para', widget: 'text', required: false }
                   - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
-                  - { label: 'Button Link', name: 'link', widget: 'string', required: false }
+                  - { label: 'Link', name: 'link', widget: 'string', required: false }
                   - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
                   - { label: 'Image - Mobile', name: 'mobile', widget: 'image', required: false }
               - label: "Style Options"
@@ -192,7 +192,7 @@ collections:
                 widget: object
                 fields:
                   - label: "Spacing"
-                    name: "margin"
+                    name: "class_margin"
                     hint: "How big should the space Above and Below be?"
                     widget: "select"
                     options: ["Extra Small", "Small", "Medium", "Large", "Extra Large"]
@@ -206,11 +206,66 @@ collections:
                 widget: object
                 fields:
                   - label: "Spacing"
-                    name: "height"
+                    name: "class_height"
                     hint: "How big should the spacer be?"
                     widget: "select"
                     options: ["Extra Small", "Small", "Medium", "Large", "Extra Large"]
                     default: "Medium"
+          - label: "Cards"
+            name: "cards"
+            widget: object
+            fields:
+              - label: "Cards"
+                name: "list"
+                widget: "list"
+                fields:
+                  - { label: 'Header', name: 'header', widget: 'string', required: false, default: "Header Text Here"}
+                  - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false, default: "Sub Header Text Here"}
+                  - { label: 'Text Content', name: 'content', widget: 'markdown' }
+                  - { label: 'Icon', name: 'icon', widget: 'image', required: false, hint:"Optional. Icon here if wanted in card." }
+                  - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Alignment"
+                    name: "class_alignment"
+                    hint: "Where Should We Align The Text In The Slide(s)?"
+                    widget: "select"
+                    options: ["Left", "Center", "Right"]
+                    default: "Left"
+          - label: "Hero Banner"
+            name: "heroBanner"
+            widget: object
+            fields:
+              - { label: 'Header - Line 1', name: 'header_1', widget: 'string', required: false, default: "Header Text Here"}
+              - { label: 'Header - Line 2', name: 'header_2', widget: 'string', required: false }
+              - { label: 'Header - Line 3', name: 'header_3', widget: 'string', required: false }
+              - { label: 'Para', name: 'para', widget: 'text', required: false }
+              - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - { label: 'Is Hero?', name: "special", widget: "boolean", hint: "Is this banner the main header for the page?", default: true }
+              - { label: 'Image - Desktop', name: 'desktop', widget: 'image', required: false }
+              - { label: 'Image - Mobile', name: 'mobile', widget: 'image', required: false }
+              - label: "Style Options"
+                name: "styles"
+                widget: object
+                fields:
+                  - label: "Alignment"
+                    name: "class_alignment"
+                    hint: "Where Should We Align The Text In The Slide(s)?"
+                    widget: "select"
+                    options: ["Left", "Center", "Right"]
+                    default: "Left"
+                  - label: "Header Text Color"
+                    name: "color_header"
+                    hint: "Which Color Should Header Be?"
+                    widget: "relation"
+                    collection: "colors"
+                    searchFields: ["name"]
+                    valueField: "name"
+                    displayFields: ["name"]
+                    default: "Dark Text Color"
 
   - name: 'themes'
     label: 'Site Themes'
@@ -239,4 +294,23 @@ collections:
           fields:
             - {label: "Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
             - {label: "Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
+        - label: "Hero Image Banner Options"
+          name: "heroBanner"
+          widget: "object"
+          fields:
+            - {label: "Background Color", name: "backgroundColor", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
+            - {label: "Text Color", name: "color", widget: "string", hint: "Use a color code here (e.g. #232323)", required: false}
+
+  - name: 'colors'
+    label: 'Site Colors'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/colors'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Color Name', name: 'name', widget: 'string', required: true }
+      - { label: "Color Code", name: "code", widget: 'string', required: true }
   

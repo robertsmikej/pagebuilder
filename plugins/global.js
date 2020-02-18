@@ -14,3 +14,9 @@ Vue.component('Sitebutton', Sitebutton);
 
 import Spacer from '../components/Spacer.vue';
 Vue.component('Spacer', Spacer);
+
+import Cards from '../components/Cards.vue';
+Vue.component('Cards', Cards);
+
+import HeroBanner from '../components/HeroBanner.vue';
+Vue.component('HeroBanner', HeroBanner);

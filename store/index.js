@@ -55,10 +55,12 @@ export const mutations = {
             for (let w in page.widgets) {
                 let widget = page.widgets[w];
                 let type = widget.type;
-                
+                // console.log(widget);
                 //BELOW SETS WIDGET THEME DATA
                 if (widget.theme) {
                     widget.theme = widget.theme.toLowerCase();
+                    
+                    
                     let theme = widget.theme;
                     if (themes[theme]) {
                         if (themes[theme].segments[widget.type]) {
@@ -72,15 +74,31 @@ export const mutations = {
                     widget.themedata = themes[widget.theme].segments["default"];
                 }
 
-                //BELOW SETS CLASS NAMES FOR WIDGETS, ETC.
+                //BELOW SETS CLASS NAMES AND PARSED STYLES FOR WIDGETS, ETC.
                 let classArr = [];
                 let subClasses = [];
+                widget.parsedStyles = {};
                 classArr.push(type);
                 if (widget.styles) {
                     for (let s in widget.styles) {
-                        let style = s;
-                        let choosen = widget.styles[s].toLowerCase();
-                        classArr.push(type + "--" + style + "--" + choosen);
+                        if (s.indexOf("class_") >= 0) { //SET CLASSES
+                            let style = s.split("class_")[1];
+                            let choosen = widget.styles[s].toLowerCase();
+                            classArr.push(type + "--" + style + "--" + choosen);
+                        } else { //SET PARSED STYLES
+                            console.log(s);
+                            let style = s.split("_")[0];
+                            let elem = s.split("_")[1];
+                            if (elem in widget.parsedStyles) {
+                                console.log(elem);
+                                widget.parsedStyles[elem][style] = widget.styles[s];
+                            } else {
+                                console.log(elem);
+                                widget.parsedStyles[elem] = {};
+                                widget.parsedStyles[elem][style] = widget.styles[s];
+                            }
+                            
+                        }
                     }
                 }
                 if (widget.substyles) {
@@ -95,7 +113,6 @@ export const mutations = {
                 }
                 widget.subClasses = subClasses;
                 widget.classes = classArr;
-
 
 
                 //KEEP BELOW - CHANGES NAME OF COMPONENT TO VUE STYLE NAME

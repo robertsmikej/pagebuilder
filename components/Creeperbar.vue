@@ -1,5 +1,6 @@
 <template>  
     <v-system-bar :class="datas.classes" v-bind="setTheme">
+        <nuxt-link v-if="datas.link" :to="datas.link" class="creeper__anchor"/>
         {{datas.text}}
     </v-system-bar>
 </template>
@@ -11,16 +12,12 @@ export default {
     },
     data() {
         return {
-            elementName: "creeperbar__component",
             vtheme: {
                 "1" : {
-                    "dark": false,
-                    "light": false,
                     "fixed": false,
                     "lights-out": false,
                     "window": true
                 }
-                
             }
         }
     },
@@ -36,7 +33,15 @@ export default {
 </script>
 
 <style>
-.sitewide__creeper .v-system-bar {
-    display: fixed;
+.v-system-bar {
+    position: relative;
+}
+.creeper__anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 </style> 

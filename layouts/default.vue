@@ -18,7 +18,7 @@
                 {{ sitewide.name }}
             </v-toolbar-title>
         </v-app-bar>
-        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperFixed(), creeperThemed()" class="sitewide__creeper"/>
+        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperThemed(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
         <v-content :style="{'paddingTop': mainPadding()}">
             <v-container>
             <nuxt />
@@ -52,28 +52,23 @@ export default {
         }  
     },
     methods: {
-        creeperFixed: function () {
-            let barFixed = {
+        creeperThemed: function (themes, sitewide, navbar) {
+            let creeperTheme = themes[sitewide.theme.toLowerCase()].segments["creeperbar"];
+            let theme = {
                 width: "100%",
                 position: "fixed",
-                top: 0
+                top: "0"
             };
-            if (this.$refs.navbar) {
-                barFixed.top = this.$refs.navbar.styles.height;
+            for (let i in creeperTheme) {
+                let item = creeperTheme[i];
+                if (i !== 'type') {
+                    theme[i] = item;
+                }
             }
-            return barFixed;
-        },
-        creeperThemed: function () {
-            let themes = this.$store.state.themes;
-            let sitewide = this.$store.state.sitewide;
-            let defaultTheme = sitewide.theme.toLowerCase();
-
-            let creeperTheme = themes[defaultTheme].segments["creeperbar"];
-            delete creeperTheme.type;
-            console.log(themes);
-            console.log(sitewide);
-            console.log(creeperTheme);
-            return creeperTheme;
+            if (navbar) {
+                theme.top = navbar.styles.height;
+            }
+            return theme;
         },
         mainPadding: function () {
             let paddingTop = 0;
@@ -152,15 +147,16 @@ body, html {
     box-sizing: border-box;
     background-color: var(--dark-grey);
     scroll-behavior: smooth;
+    font-family: var(--default-font);
+    font-size: 16px;
+    line-height: 16px;
+    word-spacing: 1px;
 }
 body * {
     box-sizing: border-box;
 }
 html {
-    font-family: var(--default-font);
-    font-size: 21px;
-    line-height: 21px;
-    word-spacing: 1px;
+    
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
@@ -288,5 +284,7 @@ a {
 .sitewide__creeper {
     text-align: center;
     justify-content: center;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    z-index: 2;
 }
 </style>
