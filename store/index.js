@@ -2,7 +2,9 @@ export const state = () => ({
     sitewide: {},
     nav: [],
     themes: {},
-    pages: {}
+    colors: {},
+    pages: {},
+    demos: {}
 });
 
 function sortItems(data) {
@@ -25,6 +27,7 @@ export const mutations = {
         var checkLive = sortItems(data);
         var populate = checkLive[0].nav_items;
         state.nav = populate;
+        // console.log(data);
     },
     setThemes(state, data) {
         let themes = {};
@@ -43,6 +46,14 @@ export const mutations = {
         }
         state.themes = themes;
     },
+    setColors(state, data) {
+        let newObj = {};
+        for (let c in data) {
+            let color = data[c];
+            newObj[color.name] = color;
+        }
+        state.colors = newObj;
+    },
     setPages(state, data) {
         let themes = state.themes;
         let sitewide = state.sitewide;
@@ -55,12 +66,10 @@ export const mutations = {
             for (let w in page.widgets) {
                 let widget = page.widgets[w];
                 let type = widget.type;
-                // console.log(widget);
+
                 //BELOW SETS WIDGET THEME DATA
                 if (widget.theme) {
                     widget.theme = widget.theme.toLowerCase();
-                    
-                    
                     let theme = widget.theme;
                     if (themes[theme]) {
                         if (themes[theme].segments[widget.type]) {
@@ -83,21 +92,17 @@ export const mutations = {
                     for (let s in widget.styles) {
                         if (s.indexOf("class_") >= 0) { //SET CLASSES
                             let style = s.split("class_")[1];
-                            let choosen = widget.styles[s].toLowerCase();
+                            let choosen = widget.styles[s].toLowerCase().replace(/ /g, "-");
                             classArr.push(type + "--" + style + "--" + choosen);
                         } else { //SET PARSED STYLES
-                            console.log(s);
                             let style = s.split("_")[0];
                             let elem = s.split("_")[1];
                             if (elem in widget.parsedStyles) {
-                                console.log(elem);
                                 widget.parsedStyles[elem][style] = widget.styles[s];
                             } else {
-                                console.log(elem);
                                 widget.parsedStyles[elem] = {};
-                                widget.parsedStyles[elem][style] = widget.styles[s];
+                                widget.parsedStyles[elem][style] = state.colors[widget.styles[s]].code;
                             }
-                            
                         }
                     }
                 }
@@ -124,14 +129,19 @@ export const mutations = {
                 widget.componentName = componentName[0];
             }
         }
-    }
+    },
+    setDemos(state, data) {
+        state.demos = data;
+    },
 };
 
 export const getters = {
     sitewide: state => state.sitewide,
     nav: state => state.nav,
     themes: state => state.themes,
-    pages: state => state.pages
+    colors: state => state.colors,
+    pages: state => state.pages,
+    demos: state => state.demos
 };
 
 export const actions = {
@@ -160,6 +170,14 @@ export const actions = {
         });
         await commit('setThemes', d);
 
+        var datas = await require.context('~/assets/content/colors/', false, /\.json$/);
+        var d = datas.keys().map(key => {
+            let res = datas(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setColors', d);
+
         var datas = await require.context('~/assets/content/pages/', false, /\.json$/);
         var d = datas.keys().map(key => {
             let res = datas(key);
@@ -167,5 +185,13 @@ export const actions = {
             return res;
         });
         await commit('setPages', d);
+
+        var datas = await require.context('~/assets/content/demos/', false, /\.json$/);
+        var d = datas.keys().map(key => {
+            let res = datas(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setDemos', d);
     }
 };

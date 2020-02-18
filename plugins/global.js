@@ -1,22 +1,19 @@
 import Vue from 'vue';
 
 import Carousel from '../components/Carousel.vue';
-Vue.component('Carousel', Carousel);
-
 import Divider from '../components/Divider.vue';
-Vue.component('Divider', Divider);
-
 import Creeperbar from '../components/Creeperbar.vue';
-Vue.component('Creeperbar', Creeperbar);
-
 import Sitebutton from '../components/Sitebutton.vue';
-Vue.component('Sitebutton', Sitebutton);
-
 import Spacer from '../components/Spacer.vue';
-Vue.component('Spacer', Spacer);
-
 import Cards from '../components/Cards.vue';
-Vue.component('Cards', Cards);
-
 import HeroBanner from '../components/HeroBanner.vue';
+import TextSection from '../components/TextSection.vue';
+
+Vue.component('Carousel', Carousel);
+Vue.component('Divider', Divider);
+Vue.component('Creeperbar', Creeperbar);
+Vue.component('Sitebutton', Sitebutton);
+Vue.component('Spacer', Spacer);
+Vue.component('Cards', Cards);
 Vue.component('HeroBanner', HeroBanner);
+Vue.component('TextSection', TextSection);

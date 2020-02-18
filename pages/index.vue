@@ -1,8 +1,6 @@
 <template>
     <v-layout column justify-center align-center>
-        <v-flex xs12 sm8 md6>
-            <component :is="component.componentName" v-for="(component, index) in pagewidgets" :key="index" :slides="component.slides ? component.slides : null" :datas="component" :theme="component.themedata ? component.themedata : null" :cssStyles="component.css ? component.css : null"></component>
-        </v-flex>
+        <component :is="component.componentName" v-for="(component, index) in pagewidgets" :key="index" :slides="component.slides ? component.slides : null" :datas="component" :theme="component.themedata ? component.themedata : null" :cssStyles="component.css ? component.css : null"></component>
     </v-layout>
 </template>
 

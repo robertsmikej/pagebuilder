@@ -17,18 +17,21 @@ export default {
     display: block;
 }
 .spacer--height--extra-small {
-    height: 8px;
-}
-.spacer--height--small {
     height: 14px;
 }
+.spacer--height--small {
+    height: 24px;
+}
 .spacer--height--medium {
-    height: 22px;
+    height: 34px;
 }
 .spacer--height--large {
-    height: 30px;
+    height: 44px;
 }
 .spacer--height--extra-large {
-    height: 38px;
+    height: 54px;
+}
+.spacer--height--mega-ultra-huge {
+    height: 100px;
 }
 </style> 

@@ -11,6 +11,9 @@ export default {
 </script>
 
 <style>
+.v-divider {
+    width: 100%;
+}
 .divider--margin--extra-small {
     margin: 8px 0;
 }

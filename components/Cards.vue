@@ -51,8 +51,12 @@ export default {
 </script>
 
 <style>
+.v-application--is-ltr .v-list-item__avatar:first-child {
+    margin-right: 6px;
+}
 .site__cards {
-    margin: 20px auto;
+    width: 100%;
+    margin: 0 auto 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -64,9 +68,7 @@ export default {
     padding: 16px;
     box-sizing: border-box;
     max-width: 350px;
-}
-.card__content {
-    
+    margin: 10px;
 }
 
 .v-card .v-list-item__title, .v-card .v-list-item__subtitle {
