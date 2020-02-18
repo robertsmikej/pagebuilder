@@ -18,7 +18,8 @@
   "email": "steve@steveshannonproductions.com",
   "options": {
     "nav": {
-      "show_name": true
+      "show_name": true,
+      "show_logo": true
     }
   }
 }
