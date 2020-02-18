@@ -17,48 +17,15 @@
       "header_1": "Steve Shannon Productions"
     },
     {
-      "type": "carousel",
-      "theme": "Light",
-      "slides": [
-        {
-          "header_1": "Header Text Here",
-          "button_text": "Hear My Demos",
-          "link": "/demos",
-          "desktop": "/img/background3.jpg",
-          "styles": {
-            "alignment": "Center"
-          }
-        },
-        {
-          "header_1": "Header Text Here Too!",
-          "desktop": "/img/background2.jpg",
-          "link": "/sales"
-        }
-      ],
-      "hero": true,
-      "special": true,
+      "type": "spacer",
       "styles": {
-        "alignment": "Center"
+        "height": "Medium"
       }
-    },
-    {
-      "type": "creeperbar",
-      "theme": "Light",
-      "special": false,
-      "text": "Save Up To 20% Now!",
-      "link": "/sales",
-      "alignment": "Center"
     },
     {
       "type": "divider",
       "styles": {
         "margin": "Medium"
-      }
-    },
-    {
-      "type": "spacer",
-      "styles": {
-        "height": "Medium"
       }
     },
     {
