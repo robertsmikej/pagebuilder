@@ -18,6 +18,7 @@
   "email": "steve@steveshannonproductions.com",
   "options": {
     "nav": {
+      "hamburger": false,
       "show_name": true,
       "show_logo": true,
       "styles": {
