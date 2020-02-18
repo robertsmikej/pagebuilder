@@ -29,7 +29,7 @@
     {
       "type": "spacer",
       "styles": {
-        "class_height": "Small"
+        "class_height": "Extra Small"
       }
     },
     {
@@ -68,7 +68,7 @@
     {
       "type": "spacer",
       "styles": {
-        "class_height": "Large"
+        "class_height": "Extra Large"
       }
     }
   ]
