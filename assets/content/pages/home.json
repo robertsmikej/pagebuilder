@@ -7,7 +7,8 @@
       "styles": {
         "height": "Medium",
         "alignment": "Center",
-        "color": "Light"
+        "color": "Light",
+        "color_header": "Light Text Color"
       },
       "special": true,
       "button_text": "",
