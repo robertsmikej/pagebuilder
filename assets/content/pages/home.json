@@ -2,18 +2,19 @@
   "name": "home",
   "widgets": [
     {
-      "header_2": "Sub Header Text Here",
-      "para": "If there is anything to put in paragraph form, it'll go here.",
+      "header_2": "",
+      "para": "",
       "styles": {
         "height": "Medium",
-        "alignment": "Center"
+        "alignment": "Center",
+        "color": "Light"
       },
       "special": true,
-      "button_text": "Click Here!",
+      "button_text": "",
       "type": "heroBanner",
-      "link": "/sales",
-      "desktop": "/img/background2.jpg",
-      "header_1": "Header Text Here"
+      "link": "",
+      "desktop": "/img/orange_speaker_background2.jpg",
+      "header_1": "Steve Shannon Productions"
     },
     {
       "type": "carousel",
