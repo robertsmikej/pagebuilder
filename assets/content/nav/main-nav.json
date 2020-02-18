@@ -1,7 +1,7 @@
 {
   "title": "Main Nav",
   "status": true,
-  "show_name": false,
+  "show_name": true,
   "nav_items": [
     {
       "title": "Home",
