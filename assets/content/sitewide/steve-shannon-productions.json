@@ -6,6 +6,7 @@
     "alignment": "Center"
   },
   "theme": "Light",
+  "logo": "/img/vue-logo.png",
   "name": "Steve Shannon Productions",
   "phone": "208-555-5555",
   "address_line_1": "Boise, ID",
