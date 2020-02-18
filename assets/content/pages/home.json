@@ -8,7 +8,8 @@
         "height": "Medium",
         "alignment": "Center",
         "color": "Light",
-        "color_header": "Light Text Color"
+        "color_header": "Light Text Color",
+        "class_alignment": "Center"
       },
       "special": true,
       "button_text": "",
