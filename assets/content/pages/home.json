@@ -6,7 +6,8 @@
       "para": "",
       "styles": {
         "color_header": "Light Text Color",
-        "class_alignment": "Center"
+        "class_alignment": "Center",
+        "class_justify-content": "Center"
       },
       "special": true,
       "button_text": "",
