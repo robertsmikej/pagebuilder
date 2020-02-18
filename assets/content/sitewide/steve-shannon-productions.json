@@ -13,7 +13,11 @@
   "address_line_2": "",
   "footer": {
     "show_site_links": true,
-    "show_social": true
+    "show_social": true,
+    "styles": {
+      "background-color": "Dark Orange",
+      "color": "Light Text Color"
+    }
   },
   "email": "steve@steveshannonproductions.com",
   "options": {
