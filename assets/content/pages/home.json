@@ -21,13 +21,15 @@
     {
       "type": "spacer",
       "styles": {
-        "height": "Medium"
+        "height": "Medium",
+        "class_height": "Medium"
       }
     },
     {
       "type": "divider",
       "styles": {
-        "margin": "Medium"
+        "margin": "Medium",
+        "class_margin": "Medium"
       }
     },
     {
@@ -41,7 +43,8 @@
     {
       "type": "cards",
       "styles": {
-        "height": "Medium"
+        "height": "Medium",
+        "class_alignment": "Center"
       },
       "list": [
         {
