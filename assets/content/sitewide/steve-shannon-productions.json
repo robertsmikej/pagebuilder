@@ -21,7 +21,7 @@
       "show_name": true,
       "show_logo": true,
       "styles": {
-        "background-color_hero": "Light Orange"
+        "background-color": "Light Orange"
       }
     }
   }
