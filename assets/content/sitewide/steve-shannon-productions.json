@@ -20,7 +20,9 @@
     "nav": {
       "show_name": true,
       "show_logo": true,
-      "background-color_hero": "Light Orange"
+      "styles": {
+        "background-color_hero": "Light Orange"
+      }
     }
   }
 }
