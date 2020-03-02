@@ -1,0 +1,121 @@
+{
+  "name": "demos",
+  "description": "Hear some of my demos",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Demos",
+      "special": true,
+      "styles": {
+        "class_alignment": "Left",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Demos\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "### **Spots I've Written**"
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_alignment": "Left",
+        "class_max-width": "Medium"
+      },
+      "list": [
+        {
+          "header": "Bed Depot",
+          "sub_header": "Boise, ID",
+          "file": "/img/bed_depot-why_spend_more-092409.mp3",
+          "content": ""
+        },
+        {
+          "header": "Animal Oasis",
+          "sub_header": "St. James, Florida",
+          "file": "/img/Animal_Oasis-PacoBarney1-102209.mp3",
+          "content": ""
+        },
+        {
+          "header": "Johnny Meyers Discount Tires",
+          "sub_header": "Boise, ID",
+          "file": "/img/johnny_meyers_discount_tires-movie_trailer-072509.mp3",
+          "content": ""
+        },
+        {
+          "header": "Suncoast Pest & Termite Control",
+          "sub_header": "Witchita, KS",
+          "content": "",
+          "file": "/img/Suncoast_PestTermite-Rodney_the_Roach-100909.mp3"
+        },
+        {
+          "header": "Patio People of Naples",
+          "sub_header": "Naples, FL",
+          "file": "/img/patio_people_of_naples-free_umbrella-090809.mp3",
+          "content": ""
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "### **PASSION & EMOTION**"
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_alignment": "Left",
+        "class_max-width": "Medium"
+      },
+      "list": [
+        {
+          "header": "Wildcat Run Golf & Country Club",
+          "sub_header": "San Diego, CA",
+          "content": "",
+          "file": "/img/wildcat-run-branding-100409.mp3"
+        },
+        {
+          "header": "John’s Pharmacy",
+          "sub_header": "Boise, ID",
+          "file": "/img/Johns_Pharmacy-102809.mp3"
+        },
+        {
+          "header": "All Saints Eye Center",
+          "sub_header": "Atlanta, GA",
+          "file": "/img/All_Saints_Eye_Center-Visual_Memories-1001092.mp3"
+        },
+        {
+          "header": "Bow Creek Recovery",
+          "sub_header": "Boise, ID",
+          "file": "/img/bow-creek-recovery-residents-020508.mp3"
+        },
+        {
+          "header": "Son Amar",
+          "sub_header": "Boise, ID",
+          "file": "/img/son-amar-epic-movie-kick-ass-advert.mp3"
+        }
+      ]
+    }
+  ]
+}

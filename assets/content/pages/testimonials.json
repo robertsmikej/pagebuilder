@@ -1,0 +1,104 @@
+{
+  "name": "testimonials",
+  "description": "Here are some of the things that people have said about me over the years.",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Testimonials",
+      "special": true,
+      "styles": {
+        "class_alignment": "Left",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium",
+        "line": false,
+        "class_line": false
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Testimonials"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium",
+        "line": true,
+        "color_line": "Dark Text Color",
+        "backgroundColor_line": "Dark Text Color",
+        "class_line": true
+      }
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_max-width": "Large"
+      },
+      "list": [
+        {
+          "header": "Whitney Hahn",
+          "sub_header": "Director - Digital Bard Video Productions",
+          "content": "“Coordinating copy with clients and relaying updates and direction to the voice talent can be tricky, but you made it easy. Your deliveries were fresh and nuanced, turn-around times were excellent and you never got annoyed with me over revisions. Thanks for your great service.”"
+        },
+        {
+          "header": "Eric C. Lindstrom",
+          "sub_header": "Creative Director - Communique Design & Marketing, Inc.",
+          "content": "“Working with Steve Shannon has been, truly, one of the most professional and pleasurable relationships we’ve formed with an outside talent at our advertising agency. His range of talent, turn-around and pricing is unparalleled. If it’s a 15 second tag or a 5 minute documentary, Steve has never let us down. We wish all our outsourced talent were HALF as good as Steve.”"
+        },
+        {
+          "header": "Barry Silverman",
+          "sub_header": "Soundworks, Inc.",
+          "content": "“We found Steve about a year ago, and he has proven to be a great addition to our stable of voice talent. He is quick to respond, does a great job, and if there is a re-do required, he is happy to do it. Steve helps us look good to our clients, and we appreciate that!”"
+        },
+        {
+          "header": "Eric Edwards",
+          "sub_header": "Owner - CMJ Media",
+          "content": "“CMJ Media provides full service advertising to a diverse client base and we’ve used Steve to handle quite a bit of our radio voiceover and production. Steve has a great voice and also offers a wide range of voice options. In addition, he’s very responsive, flexible, creative and can deliver the complete package – finding additional talent (if necessary), editing, directing and final production. We’ve been very happy with all aspects of Steve’s work and highly recommend him.”"
+        },
+        {
+          "header": "Peter Feinstein",
+          "sub_header": "CEO - Higher Power Marketing",
+          "content": "“Hi Steve,\n\nI just wanted to thank you for your tireless efforts on behalf of HPM’s clients! Every script we send you gets produced with a speed and efficiency that is always amazing… and never at the sacrifice of quality! Your great work is why we keep coming back to you, and why we’ll keep on coming back for more!”"
+        },
+        {
+          "header": "Ken Slobodkin",
+          "sub_header": "Blabbermouth Audio Productions",
+          "content": "“Casting talent is like a box of chocolates – you never know what you’re going to get. Steve Shannon keeps the audience’s attention by delivering something subtle or unexpected with every interp. His quality product and fast turnaround are always appreciated and make him a go-to guy for my most important clients. With Steve I still never know exactly what I’m going to get, but the great energy and smile that shine through on every read means I know it will be great!”",
+          "link": "blabbermouthaudio.com"
+        },
+        {
+          "header": "David Mathew Bonner",
+          "sub_header": "David Mathew Bonner Video Productions ",
+          "content": "“I can’t speak highly enough about Steve Shannon as both a person and as a business associate. Being in Canada, I was hesitant to deal with someone out of the city, never mind out of the country but from day one Steve set me at ease. His honesty and integrity shines through and you can’t help but like him. He has provided my company with professional service and a great product. Steve’s talent with voice and recording is second to none and having him on my team has been a valuable asset. He is able to provide slight changes in his voice to satisfy my clients needs and I look forward to working with him time and time again. He is my go-to voice-over guy and a business associate who feels more like a friend.”",
+          "link": "www.dmbvp.com"
+        },
+        {
+          "header": "Corbin Bedard",
+          "sub_header": "CMP  Director - Thunder Mountain Line",
+          "content": "“We switched our radio marketing dollars to Citadel Broadcasting over a year ago. Steve has lent an excellent ‘identity’ to our product and as long as he agrees to provide his voice we will continue to use Citadel! Out of the dozens of vendors we work with I am most confident with Citadel because I know Steve will deliver every time with the exact feel we are looking for.”"
+        },
+        {
+          "header": "Larry E. Hansen",
+          "sub_header": "Cowgirls Saloon & Tequilaria",
+          "content": "“Dear Steve,\n\nThank you for the opportunity to tell others about the fine work and friendship you have brought to us since opening Cowgirls Saloon & Tequilaria in 2005. You have been the voice of Cowgirls and have been responsible for making Cowgirls the success it has become. I appreciate the professionalism I have come to expect from you both on the air and in the club.”"
+        },
+        {
+          "header": "Kevin Hicks",
+          "sub_header": "Hark Productions",
+          "content": "“I recently began using Steve for my ‘gutsier’ voiceover work and couldn’t be happier. He takes direction well, has excellent range and very fast turnaround. He also has impeccable pacing with various copy word loads and posts like a pro. He is the first VO person I’ve worked with remotely that has delivered 29-second reads without my having to ask. Steve also offers whatever it takes to get it right. If you are in the market for a seasoned pro and don’t have time or desire to deal with procrastinators or primadonas, you’ve found your guy.\n\n\n\nA sample of his work can be viewed [here](http://www.harkproductions.com/media/video/crsc-tv.wmv). I am currently working on a longer piece for this client, and they have already requested that Steve be the voice on that as well. I look forward to working with him again.”"
+        },
+        {
+          "header": "Jill Hiller",
+          "sub_header": "Marketing & Customer Relations Manager",
+          "content": "“Over the course of the past few years I had the pleasure to work with Steve on multiple commercial spots. Steve is wonderful to work with. He is professional, timely and very creative. I have always received compliments on the commercials we have worked on together. If you are looking for a voice with impact, and a great talent for your business, I highly recommend him.”"
+        }
+      ]
+    }
+  ]
+}

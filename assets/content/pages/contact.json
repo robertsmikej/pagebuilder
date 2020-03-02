@@ -1,0 +1,76 @@
+{
+  "name": "contact",
+  "description": "Need some work done? Contact me and let's get to work!",
+  "widgets": [
+    {
+      "type": "heroBanner",
+      "header_1": "Contact Me",
+      "special": true,
+      "styles": {
+        "class_alignment": "Left",
+        "class_justify-content": "Bottom",
+        "color_header": "Light Text Color"
+      },
+      "desktop": "/img/orange_speaker_background.jpg"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Large",
+        "class_line": false,
+        "backgroundColor_line": "Dark Text Color"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## I Would Love To Hear From You!\n\nWhether you'd like to work together, have something that needs to be recorded, or just want to say hello, I'd love to hear from you. Let's get in touch!"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium",
+        "class_line": false,
+        "backgroundColor_line": "Dark Text Color"
+      }
+    },
+    {
+      "type": "contact",
+      "items": [
+        {
+          "text": "Name",
+          "required": true,
+          "short_name": "name",
+          "placeholder": "",
+          "type": "text"
+        },
+        {
+          "text": "E-Mail",
+          "required": true,
+          "short_name": "email",
+          "placeholder": "",
+          "type": "email"
+        },
+        {
+          "text": "Phone Number",
+          "required": false,
+          "short_name": "phone",
+          "type": "tel"
+        },
+        {
+          "text": "Your Company Name (If Applicable)",
+          "required": false,
+          "short_name": "company",
+          "placeholder": "",
+          "type": "text"
+        },
+        {
+          "text": "How Can I Help?",
+          "required": false,
+          "short_name": "message",
+          "type": "text"
+        }
+      ],
+      "button_text": "Submit"
+    }
+  ]
+}

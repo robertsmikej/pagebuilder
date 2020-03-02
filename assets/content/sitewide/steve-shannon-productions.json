@@ -1,9 +1,13 @@
 {
   "creeperbar": {
-    "show_sitewide_creeper": false,
+    "show_sitewide_creeper": true,
     "text": "20% Off Your Next Order!",
     "link": "/sales",
-    "alignment": "Center"
+    "styles": {
+      "class_alignment": "Right",
+      "backgroundColor_nav": "Teal",
+      "color_nav": "White"
+    }
   },
   "theme": "Light",
   "logo": "/img/vue-logo.png",
@@ -15,8 +19,8 @@
     "show_site_links": true,
     "show_social": true,
     "styles": {
-      "background-color": "Dark Orange",
-      "color": "Light Text Color"
+      "backgroundColor_footer": "Dark Orange",
+      "color_footer": "White"
     }
   },
   "email": "steve@steveshannonproductions.com",
@@ -24,7 +28,7 @@
     "nav": {
       "hamburger": false,
       "show_name": true,
-      "show_logo": true,
+      "show_logo": false,
       "styles": {
         "background-color": "Light Orange",
         "color": "Light Text Color"

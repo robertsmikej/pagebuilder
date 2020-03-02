@@ -1,5 +1,7 @@
 <template>
-    <div :class="datas.classes"></div>
+    <div :class="datas.classes">
+        <div v-if="datas.styles.line" :style="datas.parsedStyles.line" class="spacer__line"></div>
+    </div>
 </template>
 
 <script>
@@ -13,25 +15,30 @@ export default {
 
 <style>
 .spacer {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: block;
+    height: 1px;
+}
+.spacer__line {
+    height: 1px;
 }
 .spacer--height--extra-small {
-    height: 14px;
+    margin: 8px auto;
 }
 .spacer--height--small {
-    height: 24px;
+    margin: 12px auto;
 }
 .spacer--height--medium {
-    height: 34px;
+    margin: 18px auto;
 }
 .spacer--height--large {
-    height: 44px;
+    margin: 22px auto;
 }
 .spacer--height--extra-large {
-    height: 54px;
+    margin: 28px auto;
 }
 .spacer--height--mega-ultra-huge {
-    height: 100px;
+    margin: 50px auto ;
 }
 </style> 

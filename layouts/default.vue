@@ -1,8 +1,8 @@
 <template>
     <v-app>
-        <v-navigation-drawer v-model="drawer" app v-bind="vtheme.wrapper.nav.drawer" :style="setStyles(sitewide.options.nav.styles)">
+        <v-navigation-drawer  v-model="drawer" app v-bind="vtheme.navDrawer" :style="setColors(sitewide.options.nav.styles)">
             <v-list>
-                <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
+                <v-list-item router exact v-for="(item, i) in nav" :key="i" :to="item.link" :style="setColors(sitewide.options.nav.styles)">
                     <v-list-item-action>
                         <v-icon v-if="item.icon">{{ item.icon }}</v-icon>
                     </v-list-item-action>
@@ -12,7 +12,7 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-app-bar app v-bind="vtheme.wrapper.nav.bar" ref="navbar" :style="setStyles(sitewide.options.nav.styles)">
+        <v-app-bar app ref="navbar" v-bind="vtheme.navBar" :style="setColors(sitewide.options.nav.styles)">
             <div class="app__bar__container">
                 <div class="app__bar__name__container">
                     <div v-if="sitewide.options.nav.show_logo" class="app__bar__logo__container">
@@ -23,32 +23,33 @@
                     </v-toolbar-title>
                 </div>
                 <ul class="nav__links__no-hambuger" v-if="!sitewide.options.nav.hamburger">
-                    <nuxt-link v-for="(item, i) in nav" :key="i" :to="item.link" :style="setStyles(sitewide.options.nav.styles)">
-                            <img v-if="item.icon"/>
-                            <p>{{ item.title }}</p>
+                    <nuxt-link v-for="(item, i) in nav" :key="i" :to="item.link" :style="setColors(sitewide.options.nav.styles)">
+                        <img v-if="item.icon"/>
+                        <p>{{ item.title }}</p>
                     </nuxt-link>
                 </ul>
-                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" right @click.stop="drawer = !drawer"/>
+                <v-app-bar-nav-icon :class="{'nav__hamburger__hide' : !this.hamburgerHide}" v-bind="vtheme.button" right @click.stop="drawer = !drawer"/>
             </div>
         </v-app-bar>
-        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="creeperThemed(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
+        <Creeperbar v-if="sitewide.creeperbar.show_sitewide_creeper" :datas="sitewide.creeperbar" ref="creeper" :style="inlineStyles(themes, sitewide, this.$refs.navbar)" class="sitewide__creeper"/>
         <v-content :style="{'paddingTop': paddingMain}">
             <v-container>
                 <nuxt/>
             </v-container>
         </v-content>
-        <v-footer app v-bind="vtheme.wrapper.footer" :style="setStyles(sitewide.footer.styles)">
-            <span>&copy; {{ new Date().getFullYear() }} - {{ sitewide.name }}</span>
-        </v-footer>
+        <Footer :datas="sitewide"/>
     </v-app>
 </template>
 
 <script>
+//:style="creeperThemed(themes, sitewide, this.$refs.navbar)"
 import Creeperbar from '~/components/Creeperbar.vue';
+import Footer from '~/components/Footer.vue';
 
 export default {
     components: {
-        Creeperbar
+        Creeperbar,
+        Footer
     },
     computed: {
         wrapper: function () {
@@ -68,7 +69,11 @@ export default {
         } 
     },
     methods: {
-        creeperThemed: function (themes, sitewide, navbar) {
+        inlineStyles: function (themes, sitewide, navbar) {
+            let colorObj = this.setColors(sitewide.creeperbar);
+            // console.log(sitewide);
+            // console.log(colorObj);
+
             let creeperTheme = themes[sitewide.theme.toLowerCase()].segments["creeperbar"];
             let theme = {
                 width: "100%",
@@ -89,7 +94,7 @@ export default {
         mainPadding: function () {
             let paddingTop = 0;
             if (this.$refs.navbar) {
-                this.paddingMain = this.$refs.navbar.styles.height;
+                this.paddingMain = parseInt(this.$refs.navbar.$el.style.height.replace("px", ""));
             }
             if (this.$refs.creeper) {
                 let height = parseInt(this.$refs.creeper.$el.style.height.replace("px", "")) + parseInt(paddingTop);
@@ -97,21 +102,23 @@ export default {
             }
             return this.paddingMain;
         },
-        setStyles: function (data) {
+        setColors: function (data) {
             let colors = this.colors;
             let newObj = {};
             for (let s in data) {
-                let textColor = data[s];
-                if (textColor in colors) {
-                    newObj[s] = colors[data[s]].code;
+                let style = data[s];
+                if (s.indexOf("color") >= 0) {
+                    if (style in colors) {
+                        newObj[s] = colors[data[s]].code;
+                    }
                 }
             }
-            return newObj
+            return newObj;
         }
     },
     mounted() {
         this.mainPadding();
-        this.hamburgerHide = this.sitewide.options.nav.hamburger
+        this.hamburgerHide = this.sitewide.options.nav.hamburger;
     },
     data () {
         return {
@@ -119,27 +126,22 @@ export default {
             paddingMain: "0px",
             hamburgerHide: false,
             vtheme: {
-                wrapper: {
-                    nav: {
-                        drawer: {
-                            fixed: true,
-                            right: false,
-                            "mini-variant": false,
-                            clipped: false
-                        },
-                        bar: {
-                            clipped: false,
-                            fixed: false,
-                            dark: false,
-                            dense: true,
-                            flat: true,
-                            "collapse-on-scroll": false
-                        }    
-                    },
-                    footer: {
-                        "dark": true,
-                        "fixed": false
-                    }
+                navDrawer: {
+                    fixed: true,
+                    right: false,
+                    "mini-variant": false,
+                    clipped: false
+                },
+                navBar: {
+                    clipped: false,
+                    fixed: false,
+                    dark: false,
+                    dense: true,
+                    flat: true,
+                    "collapse-on-scroll": false
+                },
+                button: {
+                    dark: true
                 }
             }
         }
@@ -178,7 +180,7 @@ body, html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: var(--dark-grey);
+    background-color: var(--site-white);
     scroll-behavior: smooth;
     font-family: var(--default-font);
     font-size: 16px;
@@ -210,7 +212,7 @@ main {
 
 .container {
     max-width: 1300px;
-    padding-top: 0;
+    padding: 0 0 80px;
 }
 
 h1 {
@@ -224,8 +226,8 @@ h1 {
 h2 {
     font-size: 1.9em;
     line-height: 1em;
-    font-weight: 400;
-    margin: 14px 0;
+    font-weight: 500;
+    margin: 20px 0 0;
 }
 h3 {
     font-size: 1.5em;
@@ -271,6 +273,11 @@ a {
     line-height: 1em;
     font-weight: 400;
 }
+
+.v-navigation-drawer--open {
+    display: none
+}
+
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 1500px) {
     html {
@@ -291,8 +298,8 @@ a {
         line-height: 17px;
     }
 }
-/* ----------------------------  MEDIA QUERY ------------------------------ */
-@media screen and (max-width: 700px) {
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 768px) {
     html {
         font-size: 16px;
         line-height: 16px;
@@ -308,16 +315,22 @@ a {
         font-weight: 500;
         margin: 10px 0;
     }
+    .v-navigation-drawer--open {
+        display: flex;
+    }
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width: 500px) {
     h1 {
-        font-size: 1.4em;
+        font-size: 2em;
         line-height: 1.1em;
     }
     h2 {
-        font-size: 1.4em;
+        font-size: 1.6em;
         margin: 4px 0;
+    }
+    .v-toolbar__title {
+        font-size: 1em;
     }
 }
 
@@ -381,4 +394,5 @@ a {
         display: none;
     }
 }
+
 </style>

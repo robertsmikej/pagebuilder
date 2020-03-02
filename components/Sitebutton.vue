@@ -1,5 +1,5 @@
 <template>  
-    <v-btn :class="datas.classes" v-bind="setTheme">
+    <v-btn :class="datas.classes" :style="datas.styles ? datas.styles : null" v-bind="setTheme">
         {{datas.text}}
     </v-btn>
 </template>
@@ -7,7 +7,8 @@
 <script>
 export default {
     props: {
-        datas: Object
+        datas: Object,
+        styles: Object
     },
     data() {
         return {
@@ -34,8 +35,6 @@ export default {
 </script>
 
 <style>
-.sitebutton {
-    margin: 10px 0;
-}
+
 </style>
 

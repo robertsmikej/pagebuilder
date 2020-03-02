@@ -1,0 +1,93 @@
+{
+  "name": "index",
+  "description": "Steve Shannon Productions",
+  "widgets": [
+    {
+      "header_2": "",
+      "para": "",
+      "styles": {
+        "color_header": "Light Text Color",
+        "class_alignment": "Right",
+        "class_justify-content": "Bottom"
+      },
+      "special": true,
+      "button_text": "",
+      "type": "heroBanner",
+      "link": "",
+      "desktop": "/img/orange_speaker_background2.jpg",
+      "header_1": "Steve Shannon Productions"
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Medium"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Who says quality can’t be affordable?\n\nHi, I’m Steve Shannon, and after nearly four decades in broadcasting, I’d like to offer my expertise and talent to any project you have that requires a voice! From training videos to on-hold messages to TV commercials… heck, if you need a voice over for Uncle Fred and Aunt Wilma’s 50th anniversary video, I’ll help you out!",
+      "styles": {
+        "color_textsection": "Dark Text Color"
+      }
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Extra Small"
+      }
+    },
+    {
+      "type": "textSection",
+      "content": "## Browse My Services\n\nMy specialty is fully-produced radio commercials. From concept to completion, including script-writing, I can have a spot ready for airplay within 24 hours at a price that makes sense for you! After all, your “professional” voice guy isn’t the only one who should be making money!\n\nPlease check out my demos, and I look forward to hearing from you soon and working with you often!",
+      "styles": {
+        "backgroundColor_textsection": "Teal",
+        "color_textsection": "White"
+      }
+    },
+    {
+      "type": "cards",
+      "styles": {
+        "class_alignment": "Center",
+        "class_max-width": "Medium",
+        "backgroundColor_container": "Teal",
+        "color_cards": "Dark Text Color",
+        "backgroundColor_cards": "White",
+        "backgroundColor_button": "Dark Orange",
+        "color_button": "White",
+        "attribute_shaped": true
+      },
+      "list": [
+        {
+          "header": "Voice Over",
+          "sub_header": "",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit \n* sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "icon": "/img/radio.png",
+          "link": "/contact",
+          "button": "Contact Me"
+        },
+        {
+          "header": "Instructional Videos",
+          "sub_header": "Corporate and Small Business",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "icon": "/img/radio2.png",
+          "link": "/contact",
+          "button": "Contact Me"
+        },
+        {
+          "header": "Radio Imaging",
+          "sub_header": "Sub Header",
+          "link": "/contact",
+          "icon": "/img/imaging.png",
+          "content": "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n* Lorem ipsum dolor sit amet, consectetur adipiscing elit\n* Lorem ipsum dolor sit amet\n* Lorem ipsum dolor sit amet, consectetur adipiscing",
+          "button": "Contact Me"
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "styles": {
+        "class_height": "Mega Ultra Huge"
+      }
+    }
+  ]
+}

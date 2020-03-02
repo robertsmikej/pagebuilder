@@ -1,6 +1,5 @@
 <template>
     <div :class="datas.classes" class="site__hero__banner">
-
         <div class="banner__img__container">
             <img :src="datas.desktop" alt="" class="banner__img">
             <nuxt-link v-if="datas.link" :to="datas.link" class="banner__link"/>
