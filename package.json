@@ -16,7 +16,7 @@
     "@nuxtjs/markdownit": "^1.2.7",
     "@nuxtjs/sitemap": "^2.0.1",
     "@pake/react-color": "^3.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "create-react-class": "^15.6.3",
     "module-igniter": "^1.1.0",
     "netlify-cms": "^2.10.19",
